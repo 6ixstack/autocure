@@ -1,0 +1,37 @@
+{
+  "name": "autocure-ai-platform",
+  "version": "1.0.0",
+  "description": "AI-Powered Auto Shop Management Platform for AutoCure",
+  "main": "server/simple-server.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm start",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install --legacy-peer-deps",
+    "build": "cd client && npm run build",
+    "build:server": "cd server && npm run build",
+    "start": "cd server && npm start",
+    "test": "cd server && npm test && cd ../client && npm test",
+    "deploy": "npm run build && gh-pages -d client/build",
+    "heroku-postbuild": "npm run install-all && npm run build",
+    "lint": "cd server && npm run lint && cd ../client && npm run lint",
+    "clean": "rm -rf node_modules server/node_modules client/node_modules",
+    "fresh-install": "npm run clean && npm run install-all"
+  },
+  "keywords": ["autoshop", "ai", "diagnostics", "azure-openai", "react", "nodejs", "mongodb", "typescript"],
+  "author": "AutoCure Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/autocure.git"
+  },
+  "homepage": "https://your-username.github.io/autocure/",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "gh-pages": "^6.1.0"
+  }
+}

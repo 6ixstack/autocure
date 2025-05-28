@@ -1,0 +1,98 @@
+Shop Management
+Customer-Facing User Stories
+These stories detail how customers will interact with and benefit from the AI agent.
+As a customer, I want to instantly find the shop's current hours of operation through the AI agent, so I can quickly know if the shop is open or when it will be.
+As a customer, I want to get clear information on the specific services the shop provides (e.g., oil changes, brake repair, diagnostics) via the AI agent, so I can determine if they offer what I need.
+As a customer, I want to receive precise directions to the shop's location from the AI agent, so I can easily find my way there without getting lost.
+As a customer, I want to receive an estimated quote for a standard service (e.g., oil changes, tire rotation) directly from the AI agent, so I can budget accordingly before booking.
+As a customer, I want to receive an estimated quote for a diagnostic service from the AI agent, so I understand the initial cost of identifying my vehicle's problem.
+As a customer, I want to receive automated text updates on my vehicle's repair status (e.g., "diagnosis complete," "parts ordered") from the AI agent, so I am always informed without having to call.
+As a customer, I want to receive an automated notification when my vehicle is ready for pickup from the AI agent, so I know exactly when to retrieve my car.
+As a customer, I want to easily book a new service appointment online 24/7 through the AI agent, so I can schedule at my convenience.
+As a customer, I want to quickly reschedule an existing appointment through the AI agent, so I can adjust my booking without hassle.
+As a customer, I want to effortlessly cancel an appointment via the AI agent, so I can free up the shop's time if my plans change.
+As a customer, I want to inquire about the general availability of common parts for my specific vehicle model through the AI agent, so I can gauge the likelihood of a quick repair.
+As a customer, I want to receive my final invoice digitally via email or text after service, so I have a convenient and accessible record.
+As a customer, I want to receive automated payment reminders from the AI agent for outstanding balances, so I don't miss payment deadlines.
+Shop Owner-Facing User Stories
+These stories detail how the AI agent will support the shop owner and staff.
+As a shop owner, I want the AI agent to automatically answer common customer questions about shop policies and general information, so my staff is not constantly interrupted by basic inquiries.
+As a shop owner, I want the AI agent to provide real-time updates on each vehicle's repair progress to customers, so my technicians can focus solely on repairs without answering status calls.
+As a shop owner, I want the AI agent to manage the entire appointment booking process, including checking real-time availability and confirming appointments, so I can maximize bay utilization and reduce manual scheduling errors.
+As a shop owner, I want the AI agent to send automated appointment reminders to customers, so I can minimize no-shows and ensure a consistent workflow.
+As a shop owner, I want the AI agent to collect essential customer and vehicle details (e.g., VIN, mileage, specific concerns) during initial interactions, so my team has comprehensive information before the vehicle arrives.
+As a shop owner, I want the AI agent to filter and prioritize incoming customer inquiries, escalating only complex service requests or emergencies to human staff, so my team's time is used efficiently on critical tasks.
+As a shop owner, I want the AI agent to facilitate sending digital invoices and automated payment reminders, so I can streamline billing processes and improve cash flow without manual effort.
+Product Requirements (General AI Agent)
+These requirements define the necessary functionalities and characteristics of the AI agent to fulfill the user stories.
+Functional Requirements (FR)
+FR1: Information Retrieval & Delivery: The AI agent SHALL be able to retrieve and provide accurate shop information (hours, services, location, directions) to customers upon request via text-based or voice interface.
+FR2: Dynamic Quoting: The AI agent SHALL be able to generate estimated quotes for predefined standard services based on customer input.
+FR3: Repair Status Updates: The AI agent SHALL integrate with the shop's internal repair management system to provide real-time updates on vehicle repair status to customers.
+FR4: Appointment Management: The AI agent SHALL allow customers to book, reschedule, and cancel appointments, updating the shop's scheduling system accordingly.
+FR5: Automated Reminders: The AI agent SHALL send automated appointment reminders and vehicle pickup notifications to customers via their preferred communication method (SMS/email).
+FR6: Basic Parts Inquiry: The AI agent SHALL be able to provide general information regarding the availability of common parts, based on integration with the shop's inventory system.
+FR7: Digital Invoicing & Payment Reminders: The AI agent SHALL be able to send digital invoices and automated payment reminders to customers.
+FR8: Customer & Vehicle Data Collection: The AI agent SHALL collect essential customer and vehicle details (e.g., VIN, mileage, service concerns) during initial interactions and store them in the shop's CRM or management system.
+FR9: Inquiry Filtering & Escalation: The AI agent SHALL be able to identify the complexity and urgency of customer inquiries and escalate critical or complex requests to human staff.
+FR10: Communication Channel Support: The AI agent SHALL support communication via multiple channels (e.g., website chatbot, SMS, potentially voice/phone integration).
+Non-Functional Requirements (NFR)
+NFR1: Availability: The AI agent SHALL be available 24/7, with minimal downtime.
+NFR2: Accuracy: The information provided by the AI agent SHALL be accurate and consistent with the shop's data.
+NFR3: Responsiveness: The AI agent SHALL provide responses to customer inquiries within an average of 3 seconds.
+NFR4: Scalability: The AI agent system SHALL be scalable to handle increasing volumes of customer interactions without performance degradation.
+NFR5: Security: The AI agent SHALL adhere to industry best practices for data security and privacy, protecting sensitive customer and vehicle information.
+NFR6: Usability: The AI agent's interface SHALL be intuitive and easy for customers to use, regardless of their technical proficiency.
+NFR7: Integration: The AI agent SHALL seamlessly integrate with existing shop management software, scheduling systems, and CRM tools.
+NFR8: Customizability: The shop owner SHALL be able to customize the AI agent's responses, service offerings, and pricing information.
+NFR9: Reporting & Analytics: The system SHALL provide the shop owner with analytics and reports on AI agent interactions, common inquiries, and appointment trends.
+NFR10: Error Handling: The AI agent SHALL gracefully handle ambiguous or out-of-scope queries, guiding the user or escalating to a human as appropriate.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AutoShop EdTech
+This section details a specialized solution to enhance Auto Cure's diagnostic process using their Autel OBD meters, improving customer education and reporting.
+User Stories (Autel Diagnostic Integration)
+These stories focus on the mechanic's ability to view and manage diagnostic codes, as well as providing clear, visual explanations and comprehensive reports to customers.
+As a mechanic, I want to automatically display all diagnostic trouble codes (DTCs) retrieved from the Autel OBD meter on a central screen, so I can quickly review all detected issues.
+As a mechanic, I want the diagnostic codes to be clearly listed and easy to read on the screen, so I can efficiently identify and prioritize problems.
+As a mechanic, I want to be able to refresh the displayed codes after re-running a diagnostic, so I always have the most up-to-date information.
+As a mechanic, I want to click on any displayed diagnostic code, so I can access a detailed explanation of that specific code.
+As a mechanic, I want the explanation for each code to include an animation or graphic, so I can easily understand the underlying issue and explain it visually to the customer.
+As a mechanic, I want the explanation to be concise and easy to understand, avoiding overly technical jargon, so I can quickly grasp the core problem.
+As a customer, I want to see a clear and simple animation or graphic explaining my vehicle's diagnostic code, so I can better understand the problem the mechanic is describing.
+As a customer, I want the explanation to highlight the potential symptoms and implications of the code, so I understand why the repair is necessary.
+As a system administrator, I want a reliable and secure method to transfer diagnostic data from the Autel OBD meter to our application, so the codes can be displayed and processed.
+As a system administrator, I want the data transfer process to be seamless and require minimal manual intervention, so mechanics can focus on diagnostics, not data transfer.
+As a mechanic, I want to initiate the data transfer from the Autel device to the application with a simple action, so the diagnostic results are quickly available on screen.
+As a mechanic, I want to generate a comprehensive diagnostic report that includes all detected codes and their explanations, so I can provide a clear summary to the client.
+As a mechanic, I want to easily share the diagnostic report with the client, preferably digitally (e.g., via email or a secure link), so clients have a convenient record.
+As a customer, I want to receive a digital diagnostic report of my vehicle's issues, so I can review the information at my leisure.
+As a customer, I want to have access to my diagnostic report for at least 7 days, so I have sufficient time to review it and make informed decisions.
+As a shop owner, I want the diagnostic report to be branded with Auto Cure's logo and contact information, so it reinforces our professional image.
+As a shop owner, I want a record of all diagnostic reports provided to clients, so I can track customer history and follow up if needed.
+
+
+
