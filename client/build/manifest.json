@@ -1,15 +1,24 @@
 {
   "short_name": "AutoCure AI",
-  "name": "AutoCure AI Platform",
+  "name": "AutoCure AI Platform - European Auto Repair",
+  "description": "AI-Powered European Auto Repair Management System with Azure OpenAI Integration",
   "icons": [
     {
       "src": "favicon.ico",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#1976d2",
-  "background_color": "#ffffff"
+  "background_color": "#ffffff",
+  "categories": ["business", "automotive", "productivity"],
+  "orientation": "portrait-primary"
 }

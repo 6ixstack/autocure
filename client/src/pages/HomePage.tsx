@@ -107,11 +107,28 @@ const HomePage: React.FC = () => {
       <Container maxWidth="lg">
         {/* Header */}
         <Box textAlign="center" mb={4}>
-          <Typography variant="h2" color="white" fontWeight="bold" gutterBottom>
-            🚗 AutoCure AI Platform
-          </Typography>
-          <Typography variant="h5" color="white" sx={{ opacity: 0.9 }}>
-            AI-Powered European Auto Repair Specialists
+          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', mb: 2 }}>
+            <img 
+              src="/logo.svg" 
+              alt="AutoCure AI Platform" 
+              style={{ 
+                width: '80px', 
+                height: '80px', 
+                marginRight: '16px',
+                filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))'
+              }} 
+            />
+            <Box>
+              <Typography variant="h2" color="white" fontWeight="bold" sx={{ textShadow: '2px 2px 4px rgba(0,0,0,0.5)' }}>
+                AutoCure AI
+              </Typography>
+              <Typography variant="h6" color="white" sx={{ opacity: 0.9, fontWeight: 300 }}>
+                European Auto Specialists
+              </Typography>
+            </Box>
+          </Box>
+          <Typography variant="h5" color="white" sx={{ opacity: 0.9, textShadow: '1px 1px 2px rgba(0,0,0,0.5)' }}>
+            🤖 AI-Powered • 🔧 Professional Diagnostics • 🚗 European Vehicle Experts
           </Typography>
         </Box>
 
@@ -123,15 +140,28 @@ const HomePage: React.FC = () => {
               <Box sx={{ 
                 background: 'linear-gradient(45deg, #1976d2, #42a5f5)',
                 color: 'white',
-                p: 2,
-                textAlign: 'center'
+                p: 3,
+                textAlign: 'center',
+                position: 'relative',
+                overflow: 'hidden'
               }}>
-                <Typography variant="h6" fontWeight="bold">
-                  💬 Chat with our AI Assistant
-                </Typography>
-                <Typography variant="body2" sx={{ opacity: 0.9 }}>
-                  Get instant help with services, pricing, and appointments
-                </Typography>
+                <Box sx={{ 
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  background: 'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+                  opacity: 0.1
+                }}/>
+                <Box sx={{ position: 'relative', zIndex: 1 }}>
+                  <Typography variant="h6" fontWeight="bold" sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 1 }}>
+                    🤖 AI Assistant Chat
+                  </Typography>
+                  <Typography variant="body2" sx={{ opacity: 0.9, mt: 1 }}>
+                    Get instant help with services, pricing, and appointments
+                  </Typography>
+                </Box>
               </Box>
 
               {/* Messages */}
@@ -257,66 +287,99 @@ const HomePage: React.FC = () => {
             <Grid container spacing={2}>
               {/* Shop Info */}
               <Grid item xs={12}>
-                <Card elevation={4}>
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom color="primary">
-                      <LocationIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                <Card elevation={6} sx={{ 
+                  borderRadius: 3,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                  border: '1px solid #e3f2fd'
+                }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="h6" gutterBottom color="primary" sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center',
+                      fontWeight: 600,
+                      mb: 2
+                    }}>
+                      <LocationIcon sx={{ mr: 1, fontSize: 28, color: '#1976d2' }} />
                       AutoCure Location
                     </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      123 Main St, Brampton, ON L6T 4M5
-                    </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      📞 +1-905-123-4567
-                    </Typography>
-                    <Typography variant="body2">
-                      ✉️ info@autocure.net
-                    </Typography>
+                    <Box sx={{ pl: 4 }}>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🏢 123 Main St, Brampton, ON L6T 4M5
+                      </Typography>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        📞 +1-905-123-4567
+                      </Typography>
+                      <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center' }}>
+                        ✉️ info@autocure.net
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
 
               {/* Hours */}
               <Grid item xs={12}>
-                <Card elevation={4}>
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom color="primary">
-                      <TimeIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                <Card elevation={6} sx={{ 
+                  borderRadius: 3,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                  border: '1px solid #e3f2fd'
+                }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="h6" gutterBottom color="primary" sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center',
+                      fontWeight: 600,
+                      mb: 2
+                    }}>
+                      <TimeIcon sx={{ mr: 1, fontSize: 28, color: '#1976d2' }} />
                       Business Hours
                     </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      Monday - Friday: 8:00 AM - 6:00 PM
-                    </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      Saturday: 9:00 AM - 4:00 PM
-                    </Typography>
-                    <Typography variant="body2">
-                      Sunday: Closed
-                    </Typography>
+                    <Box sx={{ pl: 4 }}>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🕘 Monday - Friday: 8:00 AM - 6:00 PM
+                      </Typography>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🕘 Saturday: 9:00 AM - 4:00 PM
+                      </Typography>
+                      <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', color: '#d32f2f' }}>
+                        🔒 Sunday: Closed
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
 
               {/* Services */}
               <Grid item xs={12}>
-                <Card elevation={4}>
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom color="primary">
-                      <ServiceIcon sx={{ mr: 1, verticalAlign: 'middle' }} />
+                <Card elevation={6} sx={{ 
+                  borderRadius: 3,
+                  background: 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)',
+                  border: '1px solid #e3f2fd'
+                }}>
+                  <CardContent sx={{ p: 3 }}>
+                    <Typography variant="h6" gutterBottom color="primary" sx={{ 
+                      display: 'flex', 
+                      alignItems: 'center',
+                      fontWeight: 600,
+                      mb: 2
+                    }}>
+                      <ServiceIcon sx={{ mr: 1, fontSize: 28, color: '#1976d2' }} />
                       Popular Services
                     </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      🔧 Oil Changes ($89-120)
-                    </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      🛠️ Brake Service ($200-400)
-                    </Typography>
-                    <Typography variant="body2" gutterBottom>
-                      🔍 Engine Diagnostics ($150-200)
-                    </Typography>
-                    <Typography variant="body2">
-                      🚗 European Vehicle Specialists
-                    </Typography>
+                    <Box sx={{ pl: 4 }}>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🛢️ Oil Changes <Box component="span" sx={{ ml: 'auto', fontWeight: 'bold', color: '#2e7d32' }}>$89-120</Box>
+                      </Typography>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🛑 Brake Service <Box component="span" sx={{ ml: 'auto', fontWeight: 'bold', color: '#2e7d32' }}>$200-400</Box>
+                      </Typography>
+                      <Typography variant="body2" gutterBottom sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+                        🔍 Engine Diagnostics <Box component="span" sx={{ ml: 'auto', fontWeight: 'bold', color: '#2e7d32' }}>$150-200</Box>
+                      </Typography>
+                      <Typography variant="body2" sx={{ display: 'flex', alignItems: 'center', fontWeight: 500, color: '#1976d2' }}>
+                        🏆 European Vehicle Specialists
+                      </Typography>
+                    </Box>
                   </CardContent>
                 </Card>
               </Grid>
@@ -325,10 +388,32 @@ const HomePage: React.FC = () => {
         </Grid>
 
         {/* Footer */}
-        <Box textAlign="center" mt={4}>
-          <Typography variant="body2" color="white" sx={{ opacity: 0.8 }}>
-            🤖 Powered by Azure OpenAI | 🚗 20+ Years of European Auto Expertise
-          </Typography>
+        <Box textAlign="center" mt={6}>
+          <Box sx={{ 
+            background: 'rgba(255,255,255,0.1)', 
+            borderRadius: 2, 
+            p: 3, 
+            backdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255,255,255,0.2)'
+          }}>
+            <Typography variant="body1" color="white" sx={{ mb: 2, fontWeight: 500 }}>
+              🤖 Powered by Azure OpenAI • 🚗 20+ Years of European Auto Expertise
+            </Typography>
+            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 3, flexWrap: 'wrap' }}>
+              <Typography variant="body2" color="white" sx={{ opacity: 0.9, display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                🏆 BMW Certified
+              </Typography>
+              <Typography variant="body2" color="white" sx={{ opacity: 0.9, display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                ⭐ Mercedes Specialist
+              </Typography>
+              <Typography variant="body2" color="white" sx={{ opacity: 0.9, display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                🔧 Audi Expert
+              </Typography>
+              <Typography variant="body2" color="white" sx={{ opacity: 0.9, display: 'flex', alignItems: 'center', gap: 0.5 }}>
+                🚗 Porsche Trained
+              </Typography>
+            </Box>
+          </Box>
         </Box>
       </Container>
     </Box>

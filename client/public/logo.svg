@@ -1,0 +1,67 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="carGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1976d2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#42a5f5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="gearGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff9800;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffc107;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="60" cy="60" r="55" fill="white" stroke="#e0e0e0" stroke-width="2" filter="url(#shadow)"/>
+  
+  <!-- Car Body -->
+  <path d="M20 65 Q20 55 30 55 L50 55 Q55 50 65 50 Q75 50 80 55 L90 55 Q100 55 100 65 L100 75 Q100 80 95 80 L25 80 Q20 80 20 75 Z" 
+        fill="url(#carGradient)" stroke="#0d47a1" stroke-width="1"/>
+  
+  <!-- Car Windows -->
+  <path d="M32 55 Q32 52 35 52 L55 52 Q58 50 62 50 Q66 50 69 52 L85 52 Q88 52 88 55 L88 60 L32 60 Z" 
+        fill="#e3f2fd" stroke="#1976d2" stroke-width="1"/>
+  
+  <!-- Car Wheels -->
+  <circle cx="35" cy="78" r="8" fill="#424242" stroke="#212121" stroke-width="2"/>
+  <circle cx="35" cy="78" r="5" fill="#757575"/>
+  <circle cx="85" cy="78" r="8" fill="#424242" stroke="#212121" stroke-width="2"/>
+  <circle cx="85" cy="78" r="5" fill="#757575"/>
+  
+  <!-- AI Brain/Gear Symbol -->
+  <g transform="translate(60,35)">
+    <circle cx="0" cy="0" r="12" fill="url(#gearGradient)" stroke="#f57c00" stroke-width="1"/>
+    <!-- Gear teeth -->
+    <polygon points="-3,-12 3,-12 4,-10 -4,-10" fill="url(#gearGradient)"/>
+    <polygon points="12,-3 12,3 10,4 10,-4" fill="url(#gearGradient)"/>
+    <polygon points="3,12 -3,12 -4,10 4,10" fill="url(#gearGradient)"/>
+    <polygon points="-12,3 -12,-3 -10,-4 -10,4" fill="url(#gearGradient)"/>
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="6" fill="#fff3e0" stroke="#f57c00" stroke-width="1"/>
+    <!-- AI dots -->
+    <circle cx="-3" cy="-2" r="1.5" fill="#f57c00"/>
+    <circle cx="3" cy="-2" r="1.5" fill="#f57c00"/>
+    <circle cx="0" cy="3" r="1.5" fill="#f57c00"/>
+  </g>
+  
+  <!-- Wrench Tool -->
+  <g transform="translate(25,25) rotate(45)">
+    <rect x="-1" y="-8" width="2" height="16" fill="#9e9e9e" stroke="#757575" stroke-width="0.5"/>
+    <circle cx="0" cy="-8" r="3" fill="none" stroke="#757575" stroke-width="1.5"/>
+    <circle cx="0" cy="8" r="2" fill="#9e9e9e" stroke="#757575" stroke-width="0.5"/>
+  </g>
+  
+  <!-- Diagnostic Connector -->
+  <g transform="translate(95,25)">
+    <rect x="-4" y="-3" width="8" height="6" fill="#4caf50" stroke="#388e3c" stroke-width="1" rx="1"/>
+    <rect x="-2" y="-1" width="1" height="2" fill="#2e7d32"/>
+    <rect x="0" y="-1" width="1" height="2" fill="#2e7d32"/>
+    <rect x="2" y="-1" width="1" height="2" fill="#2e7d32"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="60" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#1976d2">AutoCure</text>
+  <text x="60" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-size="6" fill="#666">AI Platform</text>
+</svg>
