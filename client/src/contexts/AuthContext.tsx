@@ -158,7 +158,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const updateProfile = async (data: Partial<User>): Promise<void> => {
     try {
       const response = await authAPI.updateProfile(data);
-      const updatedUser = response.data.user;
+      const updatedUser = (response.data as any)?.data?.user || (response.data as any)?.user;
       
       setUser(updatedUser);
       localStorage.setItem('autocure_user', JSON.stringify(updatedUser));
