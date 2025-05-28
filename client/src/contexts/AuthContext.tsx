@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           // Verify token is still valid
           try {
             const response = await authAPI.getProfile();
-            setUser(response.data.user);
+            setUser(response.data?.data || response.data);
           } catch (error) {
             // Token is invalid, clear it
             localStorage.removeItem('autocure_token');

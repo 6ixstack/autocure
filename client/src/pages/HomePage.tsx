@@ -63,7 +63,7 @@ const HomePage: React.FC = () => {
 
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        message: response.data.data.message.message,
+        message: response.data?.data?.message?.message || response.data?.message || 'Sorry, I encountered an error.',
         sender: 'ai',
         timestamp: new Date()
       };
