@@ -270,27 +270,55 @@ npm run deploy
 
 **Automatic deployment via GitHub Actions when you push to main branch.**
 
-### ☁️ Backend Hosting Options
+### Step 1: Deploy Backend to Render
 
-**Option 1: Render (Recommended)**
-1. Connect GitHub repository to [Render](https://render.com)
-2. Set environment variables in Render dashboard
-3. Deploy with one click
+1. **Create Render Account**
+   - Go to [render.com](https://render.com) and sign up
+   - Connect your GitHub account
 
-**Option 2: Vercel**
-```bash
-# Install Vercel CLI
-npm i -g vercel
+2. **Create Web Service**
+   - Click "New +" → "Web Service"
+   - Connect this repository: `https://github.com/6ixstack/autocure`
+   - Choose the `server` directory as root directory
 
-# Deploy backend
-cd server
-vercel --prod
-```
+3. **Configure Render Settings**
+   ```
+   Name: autocure-backend
+   Environment: Node
+   Region: Choose closest to your users
+   Branch: main
+   Root Directory: server
+   Build Command: npm install
+   Start Command: npm start
+   ```
 
-**Option 3: Railway**
-1. Connect repository to [Railway](https://railway.app)
-2. Configure environment variables
-3. Deploy automatically
+4. **Add Environment Variables in Render**
+   ```bash
+   MONGODB_URI=your-mongodb-atlas-connection-string
+   AZURE_OPENAI_ENDPOINT=your-azure-openai-endpoint
+   AZURE_OPENAI_API_KEY=your-azure-openai-api-key
+   AZURE_OPENAI_DEPLOYMENT_NAME=your-deployment-name
+   JWT_SECRET=your-super-secret-jwt-key-here
+   PORT=5001
+   NODE_ENV=production
+   ```
+
+5. **Deploy**
+   - Click "Create Web Service"
+   - Wait for deployment (usually 2-3 minutes)
+   - Note your backend URL: `https://autocure-backend.onrender.com`
+
+### Step 2: Configure Frontend for Render Backend
+
+1. **Frontend Auto-Deploys to GitHub Pages**
+   - Automatically configured to use Render backend URL
+   - Deployment triggers on every push to main branch
+
+### 🌐 Access Your Application
+
+- **Frontend**: `https://6ixstack.github.io/autocure`
+- **Backend**: `https://autocure-backend.onrender.com`
+- **API Health Check**: `https://autocure-backend.onrender.com/api/health`
 
 ### 🐳 Docker Deployment
 
