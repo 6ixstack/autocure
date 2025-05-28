@@ -288,7 +288,7 @@ npm run deploy
    Region: Choose closest to your users
    Branch: main
    Root Directory: server
-   Build Command: npm install
+   Build Command: npm install && npm run build
    Start Command: npm start
    ```
 
@@ -305,8 +305,14 @@ npm run deploy
 
 5. **Deploy**
    - Click "Create Web Service"
-   - Wait for deployment (usually 2-3 minutes)
+   - Wait for deployment (usually 5-7 minutes for TypeScript compilation)
    - Note your backend URL: `https://autocure-backend.onrender.com`
+   
+   **If deployment fails with "Cannot find module" error:**
+   - Go to Settings → Build & Deploy
+   - Verify Build Command is: `npm install && npm run build`
+   - Verify Start Command is: `npm start`
+   - Manual Deploy → "Clear build cache & deploy"
 
 ### Step 2: Configure Frontend for Render Backend
 
@@ -319,6 +325,27 @@ npm run deploy
 - **Frontend**: `https://6ixstack.github.io/autocure`
 - **Backend**: `https://autocure-backend.onrender.com`
 - **API Health Check**: `https://autocure-backend.onrender.com/api/health`
+
+### 🔧 Troubleshooting Render Deployment
+
+**Common Issues:**
+
+1. **"Cannot find module" error**
+   - Build Command must include: `npm install && npm run build`
+   - Start Command must be: `npm start` (not `node start`)
+
+2. **Environment variables not working**
+   - Ensure all variables are added in Render dashboard
+   - No quotes around values in Render UI
+   - Use your actual MongoDB URI and Azure OpenAI credentials
+
+3. **Build timeout**
+   - TypeScript compilation can take 5-7 minutes
+   - Check logs for specific TypeScript errors
+
+4. **Alternative: Use Simple Server**
+   - If TypeScript build fails, use Start Command: `node simple-server.js`
+   - This skips TypeScript compilation but has fewer features
 
 ### 🐳 Docker Deployment
 
