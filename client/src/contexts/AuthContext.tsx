@@ -99,7 +99,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
       const response = await authAPI.login({ email, password });
       
-      const { user: userData, token: userToken } = response.data;
+      const userData = response.data?.data?.user || response.data?.user;
+      const userToken = response.data?.data?.token || response.data?.token;
       
       setUser(userData);
       setToken(userToken);
@@ -108,7 +109,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('autocure_token', userToken);
       localStorage.setItem('autocure_user', JSON.stringify(userData));
       
-      toast.success(`Welcome back, ${userData.firstName}!`);
+      toast.success(`Welcome back, ${userData?.firstName || 'User'}!`);
     } catch (error: any) {
       const message = error.response?.data?.message || 'Login failed';
       toast.error(message);
@@ -123,7 +124,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
       const response = await authAPI.register(userData);
       
-      const { user: newUser, token: userToken } = response.data;
+      const newUser = response.data?.data?.user || response.data?.user;
+      const userToken = response.data?.data?.token || response.data?.token;
       
       setUser(newUser);
       setToken(userToken);
@@ -132,7 +134,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       localStorage.setItem('autocure_token', userToken);
       localStorage.setItem('autocure_user', JSON.stringify(newUser));
       
-      toast.success(`Welcome to AutoCure, ${newUser.firstName}!`);
+      toast.success(`Welcome to AutoCure, ${newUser?.firstName || 'User'}!`);
     } catch (error: any) {
       const message = error.response?.data?.message || 'Registration failed';
       toast.error(message);
