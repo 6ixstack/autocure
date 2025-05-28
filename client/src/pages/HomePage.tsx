@@ -21,7 +21,7 @@ import {
   Schedule as TimeIcon,
   LocationOn as LocationIcon
 } from '@mui/icons-material';
-import axios from 'axios';
+import { aiAPI } from '../services/api';
 
 interface Message {
   id: string;
@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const response = await axios.post('/api/ai/chat', {
+      const response = await aiAPI.chat({
         message: inputMessage
       });
 
