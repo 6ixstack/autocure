@@ -1,12 +1,28 @@
 import axios, { AxiosInstance, AxiosResponse } from 'axios';
 import toast from 'react-hot-toast';
 
+// Determine API base URL
+const getApiBaseUrl = () => {
+  // Check for explicit environment variable first
+  if (process.env.REACT_APP_API_URL) {
+    return process.env.REACT_APP_API_URL;
+  }
+  
+  // Check if we're on GitHub Pages (production)
+  if (window.location.hostname.includes('github.io') || process.env.NODE_ENV === 'production') {
+    return 'https://autocure.onrender.com/api';
+  }
+  
+  // Default to local development
+  return 'http://localhost:5001/api';
+};
+
+const apiBaseUrl = getApiBaseUrl();
+console.log('API Base URL:', apiBaseUrl); // Debug log
+
 // Create axios instance
 const api: AxiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || 
-           (process.env.NODE_ENV === 'production' 
-             ? 'https://autocure.onrender.com/api' 
-             : 'http://localhost:5001/api'),
+  baseURL: apiBaseUrl,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',
