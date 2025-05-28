@@ -37,7 +37,7 @@
     "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
     "deploy": "gh-pages -d build"
   },
-  "homepage": "https://your-username.github.io/autocure/",
+  "homepage": "https://6ixstack.github.io/autocure/",
   "eslintConfig": {
     "extends": [
       "react-app",
