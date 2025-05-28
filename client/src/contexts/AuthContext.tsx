@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
           // Verify token is still valid
           try {
             const response = await authAPI.getProfile();
-            setUser(response.data?.data || response.data);
+            setUser((response.data as any)?.data || (response.data as any));
           } catch (error) {
             // Token is invalid, clear it
             localStorage.removeItem('autocure_token');
@@ -99,8 +99,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
       const response = await authAPI.login({ email, password });
       
-      const userData = response.data?.data?.user || response.data?.user;
-      const userToken = response.data?.data?.token || response.data?.token;
+      const userData = (response.data as any)?.data?.user || (response.data as any)?.user;
+      const userToken = (response.data as any)?.data?.token || (response.data as any)?.token;
       
       setUser(userData);
       setToken(userToken);
@@ -124,8 +124,8 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       setLoading(true);
       const response = await authAPI.register(userData);
       
-      const newUser = response.data?.data?.user || response.data?.user;
-      const userToken = response.data?.data?.token || response.data?.token;
+      const newUser = (response.data as any)?.data?.user || (response.data as any)?.user;
+      const userToken = (response.data as any)?.data?.token || (response.data as any)?.token;
       
       setUser(newUser);
       setToken(userToken);
