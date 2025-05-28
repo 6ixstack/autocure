@@ -61,5 +61,8 @@
     "@typescript-eslint/eslint-plugin": "^6.13.1",
     "@typescript-eslint/parser": "^6.13.1",
     "eslint": "^8.54.0"
+  },
+  "overrides": {
+    "nth-check": ">=2.0.1"
   }
 }
