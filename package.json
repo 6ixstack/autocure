@@ -23,9 +23,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/autocure.git"
+    "url": "https://github.com/6ixstack/autocure.git"
   },
-  "homepage": "https://your-username.github.io/autocure/",
+  "homepage": "https://6ixstack.github.io/autocure/",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=8.0.0"

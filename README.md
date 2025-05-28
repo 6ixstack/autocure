@@ -13,7 +13,7 @@
 
 *🤖 Intelligent Customer Service • 🔧 Diagnostic Integration • 📱 Real-time Updates*
 
-[🌐 **Live Demo**](https://your-username.github.io/autocure/) | [📖 **Documentation**](#documentation) | [🚀 **Quick Start**](#quick-start) | [🎯 **Features**](#features)
+[🌐 **Live Demo**](https://6ixstack.github.io/autocure/) | [📖 **Documentation**](#documentation) | [🚀 **Quick Start**](#quick-start) | [🎯 **Features**](#features)
 
 </div>
 
@@ -76,7 +76,7 @@ AutoCure AI Platform is a cutting-edge auto shop management system designed spec
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/autocure.git
+git clone https://github.com/6ixstack/autocure.git
 cd autocure
 
 # 2. Install all dependencies
@@ -95,7 +95,7 @@ npm run dev
 ```
 
 ### 🌐 **Live Demo Access**
-Visit our **[Live Demo](https://your-username.github.io/autocure/)** to try the platform instantly!
+Visit our **[Live Demo](https://6ixstack.github.io/autocure/)** to try the platform instantly!
 
 ---
 
@@ -456,7 +456,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 - 📧 **Email**: dev@autocure.net
 - 💬 **Discord**: [Join our community](https://discord.gg/autocure)
 - 📖 **Documentation**: [Full API docs](https://docs.autocure.net)
-- 🐛 **Issues**: [GitHub Issues](https://github.com/your-username/autocure/issues)
+- 🐛 **Issues**: [GitHub Issues](https://github.com/6ixStack/autocure/issues)
 
 ### 🎓 Resources
 
