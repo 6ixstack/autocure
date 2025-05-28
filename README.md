@@ -288,8 +288,8 @@ npm run deploy
    Region: Choose closest to your users
    Branch: main
    Root Directory: server
-   Build Command: npm install && npm run build
-   Start Command: npm start
+   Build Command: npm install
+   Start Command: node simple-server.js
    ```
 
 4. **Add Environment Variables in Render**
@@ -305,13 +305,13 @@ npm run deploy
 
 5. **Deploy**
    - Click "Create Web Service"
-   - Wait for deployment (usually 5-7 minutes for TypeScript compilation)
+   - Wait for deployment (usually 2-3 minutes)
    - Note your backend URL: `https://autocure-backend.onrender.com`
    
-   **If deployment fails with "Cannot find module" error:**
+   **If deployment fails:**
    - Go to Settings → Build & Deploy
-   - Verify Build Command is: `npm install && npm run build`
-   - Verify Start Command is: `npm start`
+   - Verify Build Command is: `npm install`
+   - Verify Start Command is: `node simple-server.js`
    - Manual Deploy → "Clear build cache & deploy"
 
 ### Step 2: Configure Frontend for Render Backend
@@ -328,24 +328,31 @@ npm run deploy
 
 ### 🔧 Troubleshooting Render Deployment
 
+**Current Configuration Uses Simple Server (Recommended):**
+- Build Command: `npm install`
+- Start Command: `node simple-server.js`
+- No TypeScript compilation needed
+- Faster deployment (2-3 minutes)
+
 **Common Issues:**
 
 1. **"Cannot find module" error**
-   - Build Command must include: `npm install && npm run build`
-   - Start Command must be: `npm start` (not `node start`)
+   - Verify Build Command is: `npm install`
+   - Verify Start Command is: `node simple-server.js`
 
 2. **Environment variables not working**
    - Ensure all variables are added in Render dashboard
    - No quotes around values in Render UI
    - Use your actual MongoDB URI and Azure OpenAI credentials
 
-3. **Build timeout**
-   - TypeScript compilation can take 5-7 minutes
-   - Check logs for specific TypeScript errors
+3. **Server not responding**
+   - Check that PORT environment variable is not set (Render handles this)
+   - Verify MongoDB URI includes username/password
 
-4. **Alternative: Use Simple Server**
-   - If TypeScript build fails, use Start Command: `node simple-server.js`
-   - This skips TypeScript compilation but has fewer features
+**Advanced: TypeScript Server (Optional)**
+- If you want the full TypeScript version, fix type errors first
+- Use Build Command: `npm install && npm run build`
+- Use Start Command: `npm start`
 
 ### 🐳 Docker Deployment
 
