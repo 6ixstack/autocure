@@ -19,6 +19,8 @@ const getApiBaseUrl = () => {
 
 const apiBaseUrl = getApiBaseUrl();
 console.log('API Base URL:', apiBaseUrl); // Debug log
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Hostname:', window.location.hostname);
 
 // Create axios instance
 const api: AxiosInstance = axios.create({
